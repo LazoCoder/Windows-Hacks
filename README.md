@@ -2,7 +2,7 @@
 Creative and unusual things that can be done with the Windows API.
 
 ## Shrinking Windows
-Any window can be shrunk down. This is particularly useful if you are an ant.
+Any window can be shrunk down.
 
 Shrinking the Calculator:
 
