@@ -80,7 +80,7 @@ Many of the properties of a Window can be force changed. In the image below I ha
  
 ## Mouse Spam
 
-Each mouse moves independently across the screen.
+Spawns hundreds of mice, where each one moves independently across the screen.
 
 ![alt-tag](gifs/mouse_spam.png)
 
