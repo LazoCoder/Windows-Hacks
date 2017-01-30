@@ -1,6 +1,7 @@
 ﻿using ImageProcessing;
 using System;
 using System.Drawing;
+using System.IO;
 using System.Threading;
 using System.Windows.Forms;
 using WindowsAPI;
@@ -33,6 +34,7 @@ namespace WindowsHacks
             Initialize();
             DoGreyScale();
             Thread.Sleep(2000);
+            mask.Dispose();
         }
 
         public static void Run(Sample s)
@@ -76,8 +78,18 @@ namespace WindowsHacks
         
         private static void GetInput()
         {
-            Console.Write("Drag in a bitmap: ");
-            string path = Console.ReadLine();
+            bool validPath = false;
+            string path = null;
+            while (!validPath)
+            {
+                Console.Write("Drag in a bitmap or type in the full path name: ");
+                path = Console.ReadLine();
+                validPath = File.Exists(path);
+                if (!validPath) {
+                    Console.Write("Invalid file path. Try again.\n");
+                }
+            }
+            
             bmp = new Bitmap(@path);
         }
 
@@ -92,7 +104,6 @@ namespace WindowsHacks
             mask.Location = new Point(0, 0);
 
             array = new int[3];
-
         }
 
         private static void BeginBlack()

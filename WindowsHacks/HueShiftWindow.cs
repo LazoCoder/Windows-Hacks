@@ -24,11 +24,12 @@ namespace WindowsHacks
         {
             list = new List<Bitmap>();
 
-            string windowTitle = getWindowTitle();
+            string windowTitle = GetWindowTitle();
             IntPtr hWnd = Window.Get(windowTitle);
 
+            Window.Normalize(hWnd);
             Window.SetFocused(hWnd);
-            System.Threading.Thread.Sleep(200);
+            System.Threading.Thread.Sleep(1000);
 
             bmp = Desktop.Screenshot();
             bmp = Tools.Crop(bmp, new Rectangle(
@@ -43,13 +44,14 @@ namespace WindowsHacks
 
             Load();
             Display();
+            mask.Dispose();
         }
 
         /// <summary>
         /// Allow the user to select a window.
         /// </summary>
         /// <returns>True if a window with the specified title is found.</returns>
-        private static string getWindowTitle()
+        private static string GetWindowTitle()
         {
             Console.Write("Insert Window Title: ");
             string windowTitle = Console.ReadLine();
@@ -57,7 +59,7 @@ namespace WindowsHacks
             if (!Window.DoesExist(windowTitle))
             {
                 Console.WriteLine("Window not found.");
-                return getWindowTitle();
+                return GetWindowTitle();
             }
 
             return windowTitle;

@@ -24,9 +24,6 @@ namespace WindowsHacks
 
             Ripples r = new Ripples(mask.Picture);
 
-            Console.WriteLine("Press enter");
-            Console.ReadLine();
-
             while (true)
             {
                 System.Threading.Thread.Sleep(10);
@@ -75,6 +72,7 @@ namespace WindowsHacks
                 }
             }
 
+            bmp.Dispose();
             bmp = doubleBuffer;
             picBox.Image = bmp;
             picBox.Update();

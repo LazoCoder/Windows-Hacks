@@ -13,8 +13,6 @@ namespace WindowsHacks
     {
         public static void Run()
         {
-            Console.WriteLine("Press enter to melt the screen...");
-            Console.ReadLine();
             Bitmap screenshot = Desktop.Screenshot();
             Mask mask = new Mask(screenshot);
             Desktop.HideTaskBar();

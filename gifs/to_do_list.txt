@@ -1,0 +1,71 @@
+To Do List:
+
+BUGS TO FIX:
+ - Wavy
+	- sometimes it gets cut off at the bottom
+	- the issue is intermittent
+	- it must be something to do with how the underlying WinAPI works
+	- I suspect that slowing down how the calls are made could solve this
+	- put System.Threading.Thread.Sleep(x) between every line of code in the method
+	- see if it solves the issues then isolate the two lines that are the problem
+ - Show
+	- showing a window after it has been hidden changes its size
+	- the new size is set to (0, 0)
+	- this has something to do with how the WindowsAPI works (or the wrapper)
+	- maybe save the dimensions before hiding it
+	- then when you "show" it, resize it to the dimensions that it was originally
+ - Masking the Desktop
+	- sometimes putting the mask over the entire Desktop doesn't work right
+	- it only masks over a small portion of the desktop, not the whole thing
+	- intermittent
+
+TEST TO MAKE:
+ - Test on other versions of Windows
+	- so far its only been tested on Windows 7
+ - Will some of the features break on dual monitors?
+	- the program assumes the Desktop is rectangular
+	- having two monitors of different sizes could mean two rectangles
+	- what would happen?
+
+IMPROVEMENTS TO MAKE:
+ - Write to Desktop
+	- allow user to pick where to write to (a coordinate)
+	- allow user to select the font size
+	- allow user to select the color
+ - Consider adding a Hotkey to quit the program
+	- some of the "hacks" take too long and I want to be able to quit them
+	- some features like Mouse Spam Extreme make it difficult to exit manually
+ - Add command line parameters
+	- this way you can run a feature of the program when it starts up
+	- easier to prank people
+ 	- Example:
+		windowshacks.exe 17 "Calculator" 300 300
+	- The above line should resize the calculator to 300x300:
+
+FEATURES TO ADD:
+ - Mouse Velocity (physics)
+	- use a while loop to keep track of how the mouse is being moved
+	- calculate the vector between the two most recent points
+	- this now becomes the velocity of the mouse
+	- the mouse will now move based on the applie force
+	- if it hits a desktop border it will bounce
+ - Window Velocity (physics)
+	- same as Mouse Velocity but for a Window
+ - Make Window run away from mouse
+	- calculate the euclidean distance of a window and the mouse
+	- if distance is smaller than a hardcoded value, move the window away
+ - Make a Window Circle the Mouse indefinitely
+	- this would be hilarious
+ - Make certain areas on the screen darker than others
+	- use a mask that goes ontop of the entire desktop
+	- make sure it has mouse transparency
+	- have cluster of bright and dark pixels with transparency
+	- it will look like the screen is broken
+ - Fake Blue Screen
+	- the is easy to do with the mask
+ - Stop Sign
+	- make an image of a Stop Sign to follow wherever the mouse goes
+	- it will be set to be "always on top"
+	- therfore it will always be under the mouse
+  	- it will prevent the mouse from clicking anything
+	- this would be hilarious

@@ -17,8 +17,9 @@ namespace WindowsHacks
             string windowTitle = getWindowTitle();
             IntPtr hWnd = Window.Get(windowTitle);
 
+            Window.Normalize(hWnd);
             Window.SetFocused(hWnd);
-            System.Threading.Thread.Sleep(200);
+            System.Threading.Thread.Sleep(1000);
 
             Bitmap screenshot = Desktop.Screenshot();
             screenshot = Tools.Crop(screenshot, new Rectangle(

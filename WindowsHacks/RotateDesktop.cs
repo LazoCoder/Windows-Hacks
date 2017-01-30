@@ -18,9 +18,6 @@ namespace WindowsHacks
 
         public static void Run()
         {
-            Console.WriteLine("Press Enter");
-            Console.ReadLine();
-
             Mouse.Move(0, 0);
 
             screenshot = Desktop.Screenshot();
