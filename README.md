@@ -44,6 +44,10 @@ Here you can see Microsoft Paint shaking all by itself. Pretty spooky huh?
 
 ![alt-tag](gifs/shaking_microsoft_paint.gif)
 
+If you are a masterful artist (such as myself), you may find that it is too easy to draw in a stationary canvas. In that case, this is the perfect utility for you.
+
+![alt-tag](gifs/drawing_in_a_shaky_microsoft_paint.gif)
+
 ## Wavy Window
 
 ![alt-tag](gifs/wavy_notepad.gif)
