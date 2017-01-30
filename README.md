@@ -16,10 +16,6 @@ Even Microsoft Word is not safe from being shrunk:
 
 ![alt-tag] (gifs/shrinking_microsoft_word.gif)
 
-## Writing Directly To The Desktop
-
-![alt-tag] (gifs/writing_to_desktop.gif)
-
 ## Hue Shifter
 
 Any window can be selected to have its colors shifted. 
@@ -31,6 +27,10 @@ Hue shifting Microsoft Paint:
 Hue shifting Microsoft Word:
 
 ![alt-tag](gifs/hue_shifting_word.gif)
+
+## Writing Directly To The Desktop
+
+![alt-tag] (gifs/writing_to_desktop.gif)
 
 ## Desktop Rotation
 
