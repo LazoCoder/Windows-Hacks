@@ -7,7 +7,7 @@ BUGS TO FIX:
 	- it must be something to do with how the underlying WinAPI works
 	- I suspect that slowing down how the calls are made could solve this
 	- put System.Threading.Thread.Sleep(x) between every line of code in the method
-	- see if it solves the issues then isolate the two lines that are the problem
+	- see if it solves the issue then isolate the two lines that are the problem
  - Show
 	- showing a window after it has been hidden changes its size
 	- the new size is set to (0, 0)
@@ -17,9 +17,10 @@ BUGS TO FIX:
  - Masking the Desktop
 	- sometimes putting the mask over the entire Desktop doesn't work right
 	- it only masks over a small portion of the desktop, not the whole thing
+	- example: the mouse spam may not take up the entire desktop
 	- intermittent
 
-TEST TO MAKE:
+TESTS TO MAKE:
  - Test on other versions of Windows
 	- so far its only been tested on Windows 7
  - Will some of the features break on dual monitors?
@@ -38,8 +39,7 @@ IMPROVEMENTS TO MAKE:
  - Add command line parameters
 	- this way you can run a feature of the program when it starts up
 	- easier to prank people
- 	- Example:
-		windowshacks.exe 17 "Calculator" 300 300
+ 	- Example: windowshacks.exe 17 "Calculator" 300 300
 	- The above line should resize the calculator to 300x300:
 
 FEATURES TO ADD:
@@ -47,25 +47,25 @@ FEATURES TO ADD:
 	- use a while loop to keep track of how the mouse is being moved
 	- calculate the vector between the two most recent points
 	- this now becomes the velocity of the mouse
-	- the mouse will now move based on the applie force
-	- if it hits a desktop border it will bounce
+	- the mouse will now move based on the applied force
+	- if it hits a Desktop border it should bounce
  - Window Velocity (physics)
 	- same as Mouse Velocity but for a Window
- - Make Window run away from mouse
+ - Make a Window run away from the mouse
 	- calculate the euclidean distance of a window and the mouse
-	- if distance is smaller than a hardcoded value, move the window away
- - Make a Window Circle the Mouse indefinitely
+	- if distance is smaller than a hardcoded value, move the Window away
+ - Make a Window circle the Mouse indefinitely
 	- this would be hilarious
- - Make certain areas on the screen darker than others
+ - Broken Screen
+ 	- Make certain areas on the screen darker than others
 	- use a mask that goes ontop of the entire desktop
 	- make sure it has mouse transparency
 	- have cluster of bright and dark pixels with transparency
-	- it will look like the screen is broken
- - Fake Blue Screen
-	- the is easy to do with the mask
+ - Fake Blue Screen of Death
+	- this is easy to do with a mask
  - Stop Sign
 	- make an image of a Stop Sign to follow wherever the mouse goes
 	- it will be set to be "always on top"
-	- therfore it will always be under the mouse
+	- therefore it will always be the top Window and directly under the mouse
   	- it will prevent the mouse from clicking anything
 	- this would be hilarious
