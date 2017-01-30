@@ -98,6 +98,8 @@ Here is the menu. It lists all of the features:
 
 ## Notes
 
-The External folder contains two essential .dll files that must be referenced for the code to work. These two files are WindowsAPI.dll and and ImageProcessing.dll and the code for these can be seen in my Task-Automation and Image-Processing-Library repositories respectively. 
+ - The to do list can be found in the top directory. This includes bugs to fix and new features to implement.
 
-This has only been tested on Windows 7.
+ - The External folder contains two essential .dll files that must be referenced for the code to work. These two files are WindowsAPI.dll and and ImageProcessing.dll and the code for these can be seen in my Task-Automation and Image-Processing-Library repositories respectively. 
+
+ - This has only been tested on Windows 7.
