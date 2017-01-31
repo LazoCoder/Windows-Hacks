@@ -8,6 +8,7 @@ namespace WindowsHacks
     {
         static void Main(string[] args)
         {
+
             while (true)
             {
                 DisplayMenu();
