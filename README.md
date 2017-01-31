@@ -2,7 +2,7 @@
 Creative and unusual things that can be done with the Windows API.
 
 ## Shrinking Windows
-Any window can be shrunk down (this is quite useful if you are an ant).
+Any window can be shrunk down.
 
 Shrinking the Calculator:
 
@@ -50,13 +50,13 @@ If you are a masterful artist (such as myself), you may find that it is too easy
 
 ## Wavy Window
 
-![alt-tag](gifs/wavy_notepad.gif)
+![alt-tag](gifs/wave_scream.gif)
 
-## Scrambling a Window
+## Window Scrambler
 
 ![alt-tag](gifs/scrambling_a_window.gif)
 
-## Window Thresholding/Tracing
+## Window Thresholding
 
 This makes the light colors transparent and the dark colors black.
 
