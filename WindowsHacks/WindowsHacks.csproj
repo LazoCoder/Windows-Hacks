@@ -52,6 +52,7 @@
     </Reference>
   </ItemGroup>
   <ItemGroup>
+    <Compile Include="BasicVision.cs" />
     <Compile Include="MeltWindow.cs" />
     <Compile Include="HueShiftWindow.cs" />
     <Compile Include="DesktopArt.cs" />
@@ -63,8 +64,10 @@
       <DependentUpon>Mask.cs</DependentUpon>
     </Compile>
     <Compile Include="MeltScreen.cs" />
+    <Compile Include="MotionDetector.cs" />
     <Compile Include="MouseSpam.cs" />
     <Compile Include="OtherFunctions.cs" />
+    <Compile Include="Painter.cs" />
     <Compile Include="Program.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
     <Compile Include="Properties\Resources.Designer.cs">
@@ -77,6 +80,10 @@
     <Compile Include="Scrambler.cs" />
     <Compile Include="ShrinkWindow.cs" />
     <Compile Include="TraceWindow.cs" />
+    <Compile Include="ViewerForm.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="ViewerForm.Designer.cs" />
     <Compile Include="Wavy.cs" />
     <Compile Include="WriteToDesktop.cs" />
   </ItemGroup>
@@ -90,6 +97,9 @@
     <EmbeddedResource Include="Properties\Resources.resx">
       <Generator>ResXFileCodeGenerator</Generator>
       <LastGenOutput>Resources.Designer.cs</LastGenOutput>
+    </EmbeddedResource>
+    <EmbeddedResource Include="ViewerForm.resx">
+      <DependentUpon>ViewerForm.cs</DependentUpon>
     </EmbeddedResource>
   </ItemGroup>
   <ItemGroup>
@@ -109,6 +119,9 @@
   </ItemGroup>
   <ItemGroup>
     <None Include="Resources\mouse.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\mona.bmp" />
   </ItemGroup>
   <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
   <!-- To modify your build process, add your task inside one of the targets below and uncomment it. 

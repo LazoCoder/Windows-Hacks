@@ -11,7 +11,7 @@ namespace WindowsHacks
     /// <summary>
     /// Shifts the hue of a specified window continously for a period of time.
     /// </summary>
-    public static class HueShiftWindow
+    public static class HueShifter
     {
         static Bitmap bmp;
         static Bitmap temp;

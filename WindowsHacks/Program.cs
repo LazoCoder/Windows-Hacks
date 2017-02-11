@@ -1,6 +1,4 @@
 ﻿using System;
-using System.Windows.Forms;
-using WindowsAPI;
 
 namespace WindowsHacks
 {
@@ -16,8 +14,7 @@ namespace WindowsHacks
                 int input = 0;
                 bool inputIsInt = int.TryParse(Console.ReadLine(), out input);
 
-                // I used if statements instead of switch deliberately.
-                // Typing in "break" after each switch doubles the lines of code and looks ugly.
+                // I used if statements instead of switch deliberately. It is more readable.
                 if (!inputIsInt) Console.WriteLine("Invalid input.");
                 else if (input == 1) WriteToDesktop.Run();
                 else if (input == 2) RotateDesktop.Run();
@@ -26,7 +23,7 @@ namespace WindowsHacks
                 else if (input == 5) MouseSpam.Run();
                 else if (input == 6) MouseSpam.RunExtreme();
                 else if (input == 7) ShrinkWindow.Run();
-                else if (input == 8) HueShiftWindow.Run();
+                else if (input == 8) HueShifter.Run();
                 else if (input == 9) MeltWindow.Run();
                 else if (input == 10) InvertWindow.Run();
                 else if (input == 11) Wavy.Run();
@@ -43,8 +40,12 @@ namespace WindowsHacks
                 else if (input == 22) OtherFunctions.DisableClose();
                 else if (input == 23) OtherFunctions.DisableMaximize();
                 else if (input == 24) OtherFunctions.DisableMinimize();
-                else if (input == 25) RippleEffect.Run();
-                else if (input == 26) DesktopArt.Run();
+                else if (input == 25) Painter.Run();
+                else if (input == 26) MotionDetector.Run(30, MotionDetector.Quality.High);
+                else if (input == 27) RippleEffect.Run();
+                else if (input == 28) DesktopArt.Run();
+                else if (input == 29) WindowsAPI.Desktop.HideTaskBar();
+                else if (input == 30) WindowsAPI.Desktop.ShowTaskBar();
                 else if (input == 0) break;
             }
         }
@@ -68,8 +69,10 @@ namespace WindowsHacks
             Console.WriteLine("19. Hide                                     24. Disable Minimize Button");
             Console.WriteLine("20. Show");
             Console.WriteLine("------------------------------MISCELLANEOUS------------------------------");
-            Console.WriteLine("25. Ripple Effect                            0.  Quit");
-            Console.WriteLine("26. Desktop Art");
+            Console.WriteLine("25. Painter                                  29. Hide Taskbar");
+            Console.WriteLine("26. Motion Detector                          30. Show Taskbar");
+            Console.WriteLine("27. Ripple Effect");
+            Console.WriteLine("28. Desktop Art                               0. Quit");
             Console.WriteLine("-------------------------------------------------------------------------");
         }
     }
