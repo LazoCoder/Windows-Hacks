@@ -34,11 +34,13 @@ Hue shifting Microsoft Word:
 
 ## Desktop Rotation
 
+Zooms into the Desktop and then spins it around and around.
+
 ![alt-tag] (gifs/desktop_rotation.gif)
 
 ## Window Shaker
 
-Randomly shakes the specified Window without the use of a mouse.
+Randomly shakes the specified window without the use of a mouse.
 
 Here you can see Microsoft Paint shaking all by itself. Pretty spooky huh?
 
@@ -54,11 +56,19 @@ If you are a masterful artist (such as myself), you may find that it is too easy
 
 ## Motion Detection
 
+Detects motion in the specified window. This was a lot of fun to play with, especially when used on videos but I can only include so many gifs...
+
+Detecting motion in Microsoft Paint:
+
 ![alt-tag](gifs/motion_detection_paint.gif)
+
+Detecting motion in command prompt:
 
 ![alt-tag](gifs/motion_detection_cmd.gif)
 
 ## Automated Painting
+
+Automatically draws a thresholded Mona Lisa into Microsoft Paint:
 
 ![alt-tag](gifs/mona_lisa.gif)
 
@@ -108,8 +118,10 @@ Here is the menu. It lists all of the features:
 
 ## Notes
 
+ - The main class that brings all of the functions together is *Program.cs*.
+
  - The to do list can be found in the top directory. This includes bugs to fix and new features to implement.
 
- - The External folder contains two essential .dll files that must be referenced for the code to work. These two files are WindowsAPI.dll and and ImageProcessing.dll and the code for these can be seen in my Task-Automation and Image-Processing-Library repositories respectively. 
+ - The External folder contains two essential .dll files that must be referenced for the code to work. These two files are WindowsAPI.dll and and ImageProcessing.dll and the code for these can be seen in my [WinAPI-Wrapper](https://github.com/LazoCoder/WinAPI-Wrapper) and [Image-Processing-Library](https://github.com/LazoCoder/Image-Processing-Library) repositories respectively. 
 
  - This has only been tested on Windows 7.
