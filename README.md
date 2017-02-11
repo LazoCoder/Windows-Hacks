@@ -6,15 +6,15 @@ Any window can be shrunk down.
 
 Shrinking the Calculator:
 
-![alt-tag] (gifs/shrinking_calculator.gif)
+![alt-tag] (gifs/shrinking_calc.gif)
 
 Shrinking Google Chrome:
 
-![alt-tag] (gifs/shrinking_google_chrome.gif)
+![alt-tag] (gifs/shrinking_chrome.gif)
 
 Even Microsoft Word is not safe from being shrunk:
 
-![alt-tag] (gifs/shrinking_microsoft_word.gif)
+![alt-tag] (gifs/shrinking_ms_word.gif)
 
 ## Hue Shifter
 
@@ -22,7 +22,7 @@ Any window can be selected to have its colors shifted.
 
 Hue shifting Microsoft Paint:
 
-![alt-tag] (gifs/hue_shifting_microsoft_paint.gif)
+![alt-tag] (gifs/hue_shifting_ms_paint.gif)
 
 Hue shifting Microsoft Word:
 
@@ -30,11 +30,11 @@ Hue shifting Microsoft Word:
 
 ## Writing Directly To The Desktop
 
-![alt-tag] (gifs/writing_to_desktop.gif)
+![alt-tag] (gifs/writing_to_desktop.png)
 
 ## Desktop Rotation
 
-![alt-tag] (gifs/rotating_desktop.gif)
+![alt-tag] (gifs/desktop_rotation.gif)
 
 ## Window Shaker
 
@@ -51,6 +51,16 @@ If you are a masterful artist (such as myself), you may find that it is too easy
 ## Wavy Window
 
 ![alt-tag](gifs/wave_scream.gif)
+
+## Motion Detection
+
+![alt-tag](gifs/motion_detection_paint.gif)
+
+![alt-tag](gifs/motion_detection_cmd.gif)
+
+## Automated Painting
+
+![alt-tag](gifs/mona_lisa.gif)
 
 ## Window Scrambler
 
