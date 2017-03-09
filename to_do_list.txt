@@ -19,6 +19,11 @@ BUGS TO FIX:
 	- it only masks over a small portion of the desktop, not the whole thing
 	- example: the mouse spam may not take up the entire desktop
 	- intermittent
+ - Flickering
+	- sometimes the mask flickers
+	- I think this is because it loads before the image inside is loaded
+	- this results in a subtle, quick flicker
+	- see if there is a way to wait for the image to load before showing mask
 
 TESTS TO MAKE:
  - Test on other versions of Windows
