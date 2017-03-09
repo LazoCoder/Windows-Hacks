@@ -58,7 +58,7 @@ namespace WindowsHacks
             Console.WriteLine("3.  Melt Desktop                             6. Mouse Spam Extreme");
             Console.WriteLine("----------------------------WINDOW APPEARANCE----------------------------");
             Console.WriteLine("7.  Shrink                                   12. Scramble");
-            Console.WriteLine("8.  Hue Shift                                13. Trace");
+            Console.WriteLine("8.  Hue Shift                                13. Threshold");
             Console.WriteLine("9.  Melt                                     14. Shake");
             Console.WriteLine("10. Invert                                   15. Shake Extreme");
             Console.WriteLine("11. Wavy");

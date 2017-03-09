@@ -20,23 +20,14 @@ namespace WindowsHacks
         {
             string windowTitle = GetWindowTitle();
             hWnd = Window.Get(windowTitle);
-            System.Threading.Thread.Sleep(100);
             blankBitmap = ImageProcessing.Tools.BlankBitmap(Window.GetSize(hWnd).Width, Window.GetSize(hWnd).Height * 2);
-
-            System.Threading.Thread.Sleep(100);
-
+            
             for (int x = 0; x < blankBitmap.Width; x++)
                 for (int y = 0; y < blankBitmap.Height; y++)
                     blankBitmap.SetPixel(x, y, Color.FromArgb(85, 255, 0));
-            System.Threading.Thread.Sleep(100);
-
 
             mask = new Mask(hWnd, blankBitmap);
             mask.Height *= 2;
-
-            Console.WriteLine(mask.Size);
-            Console.WriteLine(mask.Picture.Size);
-            Console.WriteLine(mask.Picture.Image.Size);
 
             mask.AllowTransparency = true;
             mask.TransparencyKey = Color.FromArgb(85, 255, 0);
@@ -46,9 +37,6 @@ namespace WindowsHacks
             point = Window.GetLocation(hWnd);
             size = Window.GetSize(hWnd);
             LoadColumns(hWnd);
-            Window.Close(hWnd);
-            System.Threading.Thread.Sleep(100);
-
 
             stretch = new KeyValuePair<int, int>[columns.Length];
             for (int i = 0; i < stretch.Length; i++)
@@ -66,6 +54,7 @@ namespace WindowsHacks
 
                 mask.Picture.Image = temp;
                 mask.Picture.Update();
+                Window.Close(hWnd);
                 for (int k = 0; k < 20; k++)
                     UpdateStrech();
                 System.Threading.Thread.Sleep(10);
