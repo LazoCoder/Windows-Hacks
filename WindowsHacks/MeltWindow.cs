@@ -34,7 +34,7 @@ namespace WindowsHacks
             // The actual blurring.
             for (int i = 0; i < 10; i++)
             {
-                screenshot = Effect.Blur(screenshot);
+                screenshot = Filter.BlurFast(screenshot);
                 System.Threading.Thread.Sleep(100);
                 layer.Picture.Image = screenshot;
                 layer.Picture.Update();

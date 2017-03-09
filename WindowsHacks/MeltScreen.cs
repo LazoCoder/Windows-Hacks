@@ -20,7 +20,7 @@ namespace WindowsHacks
             for (int i = 0; i < 80; i++)
             {
                 Mouse.Move(0, 0);
-                screenshot = Effect.Blur(screenshot);
+                screenshot = Filter.BlurFast(screenshot);
                 mask.Picture.Image = screenshot;
                 mask.Picture.Update();
             }

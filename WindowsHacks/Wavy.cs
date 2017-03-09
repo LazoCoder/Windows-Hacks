@@ -9,7 +9,6 @@ namespace WindowsHacks
     {
 
         static Bitmap[] columns;
-        static Bitmap[] stretchedCols;
         static KeyValuePair<int, int>[] stretch;
         static Bitmap blankBitmap;
         static Mask mask;
