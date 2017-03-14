@@ -6,15 +6,15 @@ Any window can be shrunk down.
 
 Shrinking the Calculator:
 
-![alt-tag] (gifs/shrinking_calc.gif)
+![alt-tag](gifs/shrinking_calc.gif)
 
 Shrinking Google Chrome:
 
-![alt-tag] (gifs/shrinking_chrome.gif)
+![alt-tag](gifs/shrinking_chrome.gif)
 
 Even Microsoft Word is not safe from being shrunk:
 
-![alt-tag] (gifs/shrinking_ms_word.gif)
+![alt-tag](gifs/shrinking_ms_word.gif)
 
 ## Hue Shifter
 
@@ -22,7 +22,7 @@ Any window can be selected to have its colors shifted.
 
 Hue shifting Microsoft Paint:
 
-![alt-tag] (gifs/hue_shifting_ms_paint.gif)
+![alt-tag](gifs/hue_shifting_ms_paint.gif)
 
 Hue shifting Microsoft Word:
 
@@ -30,13 +30,13 @@ Hue shifting Microsoft Word:
 
 ## Writing Directly To The Desktop
 
-![alt-tag] (gifs/writing_to_desktop.png)
+![alt-tag](gifs/writing_to_desktop.png)
 
 ## Desktop Rotation
 
 Zooms into the Desktop and then spins it around and around.
 
-![alt-tag] (gifs/desktop_rotation.gif)
+![alt-tag](gifs/desktop_rotation.gif)
 
 ## Window Shaker
 
@@ -82,11 +82,11 @@ This makes the light colors transparent and the dark colors black.
 
 Before thresholding:
 
-![alt-tag] (gifs/thresholding_before.png)
+![alt-tag](gifs/thresholding_before.png)
 
 After thresholding:
 
-![alt-tag] (gifs/thresholding_after.png)
+![alt-tag](gifs/thresholding_after.png)
 
 ## Force Changing Window Properties
 
