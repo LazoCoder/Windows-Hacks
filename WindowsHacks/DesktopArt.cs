@@ -59,9 +59,7 @@ namespace WindowsHacks
             array[1] = 147;
             array[2] = 255;
 
-            Console.Write("Insert Window Title: ");
-            string input = Console.ReadLine();
-            IntPtr hWnd = Window.Get(input);
+            IntPtr hWnd = OtherFunctions.GetFocusedWindow();
 
             Bitmap bmp = Window.Screenshot(hWnd);
 

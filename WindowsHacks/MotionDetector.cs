@@ -55,7 +55,7 @@ namespace WindowsHacks
         /// <param name="quality">The quality of the display.</param>
         public static void Run(int frames, Quality quality)
         {
-            GetUserInput();
+            hWnd = OtherFunctions.GetFocusedWindow();
             SetQuality(quality);
             LoadForm();
             MotionDetectorLoop(frames);
@@ -135,23 +135,6 @@ namespace WindowsHacks
             snapshot2 = Tools.Resize(Window.Screenshot(hWnd), (int)(width * proportion), (int)(height * proportion));
 
             return true;
-        }
-
-        /// <summary>
-        /// Allow the user to specify which window to perform the motion detection on.
-        /// </summary>
-        private static void GetUserInput()
-        {
-            Console.Write("Insert Window Title: ");
-            windowName = Console.ReadLine();
-
-            if (!Window.DoesExist(windowName))
-            {
-                Console.WriteLine("Window not found.");
-                GetUserInput();
-            }
-            else hWnd = Window.Get(windowName);
-
         }
 
         private static void Wait(int ms)
