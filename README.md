@@ -116,6 +116,17 @@ Here is the menu. It lists all of the features:
 
 ![alt-tag](gifs/menu.png)
 
+## How to Run
+
+The compiled binary is located in the folder *Executable*.
+
+If you want to compile it yourself the recommended way is as follows:
+1. Make sure you have Visual Studio and .NET Framework 4.5.2.
+2. Download the zip.
+3. Unzip it.
+4. Open WindowsHacks.sln in Visual Studio.
+5. Press F5 to run it.
+
 ## Notes
 
  - The main class that brings all of the functions together is *Program.cs*.
