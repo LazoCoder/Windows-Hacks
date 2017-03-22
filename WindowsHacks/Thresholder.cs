@@ -16,8 +16,7 @@ namespace WindowsHacks
         {
             if (thresholds < 1 || thresholds > 255) throw new Exception("Threshold must be 1-255.");
 
-            string windowTitle = getWindowTitle();
-            IntPtr hWnd = Window.Get(windowTitle);
+            IntPtr hWnd = OtherFunctions.GetFocusedWindow();
 
             System.Threading.Thread.Sleep(100);
             Window.SetFocused(hWnd);
@@ -42,24 +41,6 @@ namespace WindowsHacks
             System.Threading.Thread.Sleep(100);
             Window.Close(hWnd);
             Application.Run();
-        }
-
-        /// <summary>
-        /// Allow the user to select a window.
-        /// </summary>
-        /// <returns>True if a window with the specified title is found.</returns>
-        private static string getWindowTitle()
-        {
-            Console.Write("Insert Window Title: ");
-            string windowTitle = Console.ReadLine();
-
-            if (!Window.DoesExist(windowTitle))
-            {
-                Console.WriteLine("Window not found.");
-                return getWindowTitle();
-            }
-
-            return windowTitle;
         }
     }
 }

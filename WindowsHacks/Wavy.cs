@@ -18,8 +18,7 @@ namespace WindowsHacks
 
         public static void Run()
         {
-            string windowTitle = GetWindowTitle();
-            hWnd = Window.Get(windowTitle);
+            hWnd = OtherFunctions.GetFocusedWindow();
             blankBitmap = ImageProcessing.Tools.BlankBitmap(Window.GetSize(hWnd).Width, Window.GetSize(hWnd).Height * 2);
             
             for (int x = 0; x < blankBitmap.Width; x++)
@@ -93,20 +92,6 @@ namespace WindowsHacks
                 columns[i] = ImageProcessing.Tools.BlankBitmap(1, screenshot.Height);
                 ImageProcessing.Tools.Copy(columns[i], screenshot, -i, 0);
             }
-        }
-
-        static string GetWindowTitle()
-        {
-            Console.Write("Insert Window Title: ");
-            string windowTitle = Console.ReadLine();
-
-            if (!Window.DoesExist(windowTitle))
-            {
-                Console.WriteLine("Window not found.");
-                return GetWindowTitle();
-            }
-
-            return windowTitle;
         }
     }
 

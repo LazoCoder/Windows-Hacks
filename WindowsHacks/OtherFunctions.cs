@@ -30,8 +30,7 @@ namespace WindowsHacks
 
         public static void WindowShaker()
         {
-            string windowTitle = GetWindowTitle();
-            IntPtr hWnd = Window.Get(windowTitle);
+            IntPtr hWnd = GetFocusedWindow();
             Random r = new Random();
             for (int i = 0; i < 1000; i++)
             {
@@ -47,8 +46,7 @@ namespace WindowsHacks
 
         public static void WindowShakerExtreme()
         {
-            string windowTitle = GetWindowTitle();
-            IntPtr hWnd = Window.Get(windowTitle);
+            IntPtr hWnd = GetFocusedWindow();
             Random r = new Random();
             for (int i = 0; i < 1000; i++)
             {
@@ -61,16 +59,14 @@ namespace WindowsHacks
 
         public static void SetTitle()
         {
-            string windowTitle = GetWindowTitle();
-            IntPtr hWnd = Window.Get(windowTitle);
+            IntPtr hWnd = GetFocusedWindow();
             Console.Write("New Title: ");
             Window.SetTitle(hWnd, Console.ReadLine());
         }
 
         public static void ResizeBorders()
         {
-            string windowTitle = GetWindowTitle();
-            IntPtr hWnd = Window.Get(windowTitle);
+            IntPtr hWnd = GetFocusedWindow();
 
             Console.Write("New Width: ");
             int width = 0;
@@ -95,66 +91,63 @@ namespace WindowsHacks
 
         public static void MouseTransparency()
         {
-            string windowTitle = GetWindowTitle();
-            IntPtr hWnd = Window.Get(windowTitle);
+            IntPtr hWnd = GetFocusedWindow();
             Window.EnableMouseTransparency(hWnd);
         }
 
         public static void Hide()
         {
-            string windowTitle = GetWindowTitle();
-            IntPtr hWnd = Window.Get(windowTitle);
+            IntPtr hWnd = GetFocusedWindow();
             Window.Hide(hWnd);
         }
 
         public static void Show()
         {
-            string windowTitle = GetWindowTitle();
-            IntPtr hWnd = Window.Get(windowTitle);
+            IntPtr hWnd = GetFocusedWindow();
             Window.Show(hWnd);
         }
 
         public static void RemoveMenu()
         {
-            string windowTitle = GetWindowTitle();
-            IntPtr hWnd = Window.Get(windowTitle);
+            IntPtr hWnd = GetFocusedWindow();
             Window.RemoveMenu(hWnd);
         }
 
         public static void DisableClose()
         {
-            string windowTitle = GetWindowTitle();
-            IntPtr hWnd = Window.Get(windowTitle);
+            IntPtr hWnd = GetFocusedWindow();
             Window.DisableCloseButton(hWnd);
         }
 
         public static void DisableMaximize()
         {
-            string windowTitle = GetWindowTitle();
-            IntPtr hWnd = Window.Get(windowTitle);
+            IntPtr hWnd = GetFocusedWindow();
             Window.DisableMaximizeButton(hWnd);
         }
 
         public static void DisableMinimize()
         {
-            string windowTitle = GetWindowTitle();
-            IntPtr hWnd = Window.Get(windowTitle);
+            IntPtr hWnd = GetFocusedWindow();
             Window.DisableMinimizeButton(hWnd);
         }
 
-        static string GetWindowTitle()
+        /// <summary>
+        /// get the currently focused window.
+        /// </summary>
+        internal static IntPtr GetFocusedWindow()
         {
-            Console.Write("Insert Window Title: ");
-            string windowTitle = Console.ReadLine();
+            Console.WriteLine("Select a window within 2 seconds:");
+            System.Threading.Thread.Sleep(2000);
+            var ptr = Window.GetFocused();
+            var windowName = Window.GetTitle(ptr);
+            Console.WriteLine($"You've selected '{windowName}'");
+            Console.WriteLine($"Type 'Y' to proceed or 'N' to retry, default is 'Y':");
 
-            if (!Window.DoesExist(windowTitle))
-            {
-                Console.WriteLine("Window not found.");
-                return GetWindowTitle();
-            }
+            var response = Console.ReadLine();
+            if (response.ToLower().Contains("n"))
+                ptr = GetFocusedWindow();
 
-            return windowTitle;
+            return ptr;
         }
-
     }
 }

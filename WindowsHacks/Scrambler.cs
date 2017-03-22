@@ -16,8 +16,7 @@ namespace WindowsHacks
 
         public static void Run()
         {
-            string windowTitle = getWindowTitle();
-            IntPtr hWnd = Window.Get(windowTitle);
+            IntPtr hWnd = OtherFunctions.GetFocusedWindow();
 
             Window.Normalize(hWnd);
             Window.SetFocused(hWnd);
@@ -37,24 +36,6 @@ namespace WindowsHacks
             LoadHeight(0, mask.Height-1);
             Application.Run();
             //Display();
-        }
-
-        /// <summary>
-        /// Allow the user to select a window.
-        /// </summary>
-        /// <returns>True if a window with the specified title is found.</returns>
-        private static string getWindowTitle()
-        {
-            Console.Write("Insert Window Title: ");
-            string windowTitle = Console.ReadLine();
-
-            if (!Window.DoesExist(windowTitle))
-            {
-                Console.WriteLine("Window not found.");
-                return getWindowTitle();
-            }
-
-            return windowTitle;
         }
 
         /// <summary>
