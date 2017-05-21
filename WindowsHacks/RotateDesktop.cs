@@ -26,24 +26,52 @@ namespace WindowsHacks
             Desktop.HideTaskBar();
             //mask.Hide();
 
+            try
+            {
+                Render();
+            }
+            catch (Exception ex)
+            {
+                CleanUp();
+                Console.WriteLine("Unable to perform this function.\n" +
+                    "You might not have enough RAM available.\n" +
+                    "Either upgrade your RAM or decrease your screen resolution.\n" +
+                    "Press any key to continue...");
+                Console.ReadKey();
+                return;
+            }
+
+            Play();
+            CleanUp();
+
+            Mouse.Move(15, Desktop.GetWidth() - 15);
+        }
+
+        private static void Render()
+        {
             LoadZoomIn();
             zoomed = new Bitmap(adjusted);
             LoadRotate();
+        }
+
+        private static void Play()
+        {
             DisplayList(listZoom);
-            DisplayList(listRotate);
-            DisplayList(listRotate);
-            DisplayList(listRotate);
-            DisplayList(listRotate);
-            DisplayList(listRotate);
-            DisplayList(listRotate);
-            DisposeList(listRotate);
+
+            for (int i = 0; i < 7; i++)
+            {
+                DisplayList(listRotate);
+            }
+
             LoadZoomOut();
             DisplayList(listZoom);
+        }
+
+        private static void CleanUp()
+        {
             Desktop.ShowTaskBar();
             DisposeList(listZoom);
-
-
-            Mouse.Move(15, Desktop.GetWidth()-15);
+            DisposeList(listRotate);
             mask.Dispose();
         }
 
@@ -89,7 +117,7 @@ namespace WindowsHacks
 
         private static void LoadZoomIn()
         {
-            for (double i = 1; i < 2; i += 0.1)
+            for (double i = 1; i < 20; i += 0.1)
             {
                 adjusted.Dispose();
                 adjusted = Tools.Resize(
