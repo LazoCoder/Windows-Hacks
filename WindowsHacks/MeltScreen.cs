@@ -23,6 +23,9 @@ namespace WindowsHacks
                 screenshot = Filter.BlurFast(screenshot);
                 mask.Picture.Image = screenshot;
                 mask.Picture.Update();
+
+                if (i % 5 == 0) // Perform garbage collection only occassionally as to not reduce performance.
+                    GC.Collect();
             }
 
             for (int i = 0; i < 500; i++)
