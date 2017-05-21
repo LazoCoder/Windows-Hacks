@@ -117,7 +117,7 @@ namespace WindowsHacks
 
         private static void LoadZoomIn()
         {
-            for (double i = 1; i < 20; i += 0.1)
+            for (double i = 1; i < 2; i += 0.1)
             {
                 adjusted.Dispose();
                 adjusted = Tools.Resize(
