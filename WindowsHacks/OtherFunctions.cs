@@ -107,6 +107,18 @@ namespace WindowsHacks
             Window.Show(hWnd);
         }
 
+        public static void FlipLeft()
+        {
+            IntPtr hWnd = GetFocusedWindow();
+            Window.FlipLeft(hWnd);
+        }
+
+        public static void FlipRight()
+        {
+            IntPtr hWnd = GetFocusedWindow();
+            Window.FlipRight(hWnd);
+        }
+
         public static void RemoveMenu()
         {
             IntPtr hWnd = GetFocusedWindow();

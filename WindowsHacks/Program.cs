@@ -37,15 +37,17 @@ namespace WindowsHacks
                 else if (input == 19) OtherFunctions.Hide();
                 else if (input == 20) OtherFunctions.Show();
                 else if (input == 21) OtherFunctions.RemoveMenu();
-                else if (input == 22) OtherFunctions.DisableClose();
-                else if (input == 23) OtherFunctions.DisableMaximize();
-                else if (input == 24) OtherFunctions.DisableMinimize();
-                else if (input == 25) Painter.Run();
-                else if (input == 26) MotionDetector.Run(30, MotionDetector.Quality.High);
-                else if (input == 27) RippleEffect.Run();
-                else if (input == 28) DesktopArt.Run();
-                else if (input == 29) WindowsAPI.Desktop.HideTaskBar();
-                else if (input == 30) WindowsAPI.Desktop.ShowTaskBar();
+                else if (input == 22) OtherFunctions.FlipLeft();
+                else if (input == 23) OtherFunctions.FlipRight();
+                else if (input == 24) OtherFunctions.DisableClose();
+                else if (input == 25) OtherFunctions.DisableMaximize();
+                else if (input == 26) OtherFunctions.DisableMinimize();
+                else if (input == 27) Painter.Run();
+                else if (input == 28) MotionDetector.Run(30, MotionDetector.Quality.High);
+                else if (input == 29) RippleEffect.Run();
+                else if (input == 30) DesktopArt.Run();
+                else if (input == 31) WindowsAPI.Desktop.HideTaskBar();
+                else if (input == 32) WindowsAPI.Desktop.ShowTaskBar();
                 else if (input == 0) break;
             }
         }
@@ -63,16 +65,17 @@ namespace WindowsHacks
             Console.WriteLine("10. Invert                                   15. Shake Extreme");
             Console.WriteLine("11. Wavy");
             Console.WriteLine("----------------------------WINDOW PROPERTIES----------------------------");
-            Console.WriteLine("16. Set Title                                21. Remove Menu");
-            Console.WriteLine("17. Resize Borders                           22. Disable Close Button");
-            Console.WriteLine("18. Mouse Transparency                       23. Disable Maximize Button");
-            Console.WriteLine("19. Hide                                     24. Disable Minimize Button");
-            Console.WriteLine("20. Show");
+            Console.WriteLine("16. Set Title                                22. Flip Layout Left");
+            Console.WriteLine("17. Resize Borders                           23. Flip Layout Right");
+            Console.WriteLine("18. Mouse Transparency                       24. Disable Close Button");
+            Console.WriteLine("19. Hide                                     25. Disable Maximize Button");
+            Console.WriteLine("20. Show                                     26. Disable Minimize Button");
+            Console.WriteLine("21. Remove Menu");
             Console.WriteLine("------------------------------MISCELLANEOUS------------------------------");
-            Console.WriteLine("25. Painter                                  29. Hide Taskbar");
-            Console.WriteLine("26. Motion Detector                          30. Show Taskbar");
-            Console.WriteLine("27. Ripple Effect");
-            Console.WriteLine("28. Desktop Art                               0. Quit");
+            Console.WriteLine("27. Painter                                  31. Hide Taskbar");
+            Console.WriteLine("28. Motion Detector                          32. Show Taskbar");
+            Console.WriteLine("29. Ripple Effect");
+            Console.WriteLine("30. Desktop Art                               0. Quit");
             Console.WriteLine("-------------------------------------------------------------------------");
         }
     }
