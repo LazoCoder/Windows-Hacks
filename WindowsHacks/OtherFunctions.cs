@@ -1,4 +1,4 @@
-﻿using System;
+using System;
 using System.Collections.Generic;
 using System.Linq;
 using System.Text;
@@ -99,12 +99,63 @@ namespace WindowsHacks
         {
             IntPtr hWnd = GetFocusedWindow();
             Window.Hide(hWnd);
+            HidenWindows.Add((Window.GetTitle(hWnd), hWnd));
+            Console.WriteLine(@"You can reshow it by select 'Show'(20.Show).");
         }
+
+        //Need to install Nuget Package "System.ValueTuple"
+        static List<(string, IntPtr)> HidenWindows = new List<(string, IntPtr)>();
 
         public static void Show()
         {
-            IntPtr hWnd = GetFocusedWindow();
-            Window.Show(hWnd);
+            try
+            {
+                //There is an error in the past version.That method need to show the hiden window,
+                //but a window cannot be selected when its hiden.
+                //IntPtr hWnd = GetFocusedWindow();
+                (string, IntPtr) hide = GetHidenWindow();
+                //Using Window.Show(IntPtr) will let thw window turn to the smallest size.
+                //I don't know why it happens or how to deal with it.
+                Window.Show(hide.Item2);
+                HidenWindows.Remove(hide);
+            }
+            catch (ArgumentException a) 
+            {
+                if (a.Message == "InvalidInput")
+                {
+                    return;
+                }
+                else
+                    throw;
+            }
+        }
+
+        private static (string, IntPtr) GetHidenWindow()
+        {
+            if (HidenWindows.Count > 0)
+            {
+                Console.WriteLine("-----------------------------SELECT WINDOW-----------------------------");
+                for (int i = 0; i < HidenWindows.Count; i++)
+                {
+                    Console.WriteLine("{0}.{1}", i + 1, HidenWindows[i].Item1);
+                }
+                Console.Write("Input:");
+                bool canindex = int.TryParse(Console.ReadLine(), out int index);
+                if (canindex)
+                {
+                    return HidenWindows[index - 1];
+                }
+                else
+                {
+                    Console.WriteLine("Invalid Input.");
+                    throw new ArgumentException("InvalidInput");
+                }
+            }
+            else
+            {
+                Console.WriteLine("No hiden windows.");
+                throw new ArgumentException("InvalidInput");
+            }
         }
 
         public static void FlipLeft()
